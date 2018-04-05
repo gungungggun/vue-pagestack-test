@@ -1,18 +1,29 @@
 <template lang="pug">
-  div.hello
-    h1 {{ msg }}
-    h2 Essential Links
+  div.stack
+    div(v-for="page in pages")
+      component(:is="page")
 </template>
 
 <script lang="coffee">
+import Page1 from '@/components/Page1.vue'
+import Page2 from '@/components/Page2.vue'
+import Page3 from '@/components/Page3.vue'
+import Page4 from '@/components/Page4.vue'
+import Page5 from '@/components/Page5.vue'
+
 export default {
   name: 'HelloWorld',
   data: () ->
-    msg: 'Welcome to Your Vue.js App'
+    pages: [
+      Page1
+      Page2
+      Page3
+      Page4
+      Page5
+    ]
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h1, h2 {
   font-weight: normal;
